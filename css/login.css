@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    background-image: url('/midia/poster-god-of-war-3-b-121c7b4f.jpg');
+    background-size: cover; 
+     
+}
+
+
+.container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('/midia/poster-god-of-war-3-b-121c7b4f.jpg');
+
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-position: center;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: blue;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:hover {
+    background: darkblue;
+}
+
+.post {
+    background: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}

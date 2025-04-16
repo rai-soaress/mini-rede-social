@@ -1,0 +1,39 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    background-image: url('/midia/good\ of.webp');
+    background-size: cover; 
+}
+
+form {
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    
+}
+
+button:hover {
+    background: darkblue;
+}
+
+button{
+    background: blue;
+    padding: 5px;  
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 8px;
+    border: none;
+}
+
+input {
+    width: 50%;
+    padding: 5px;
+    margin: 1px 5px;
+    border-radius: 7px;
+    
+}
+
+

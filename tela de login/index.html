@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer login</title>
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+    <form class="form" onsubmit="return login()">
+        <div class="container">
+            <h2>Fazer login</h2>
+            <input type="text" id="newUser" placeholder="Usuário" required>
+            <input type="password" id="newPass" placeholder="Senha" required>
+            <div>
+                <button 
+                type="submit">Login
+                </button>         
+            </div>
+            <p>Não possui uma conta? <a href="/tela de cadastro/cadastro.html">Fazer cadastro</a></p>
+        </div>
+    </form>
+
+    <script>
+        function login() {
+            const newUser = document.getElementById("newUser").value;
+            const newPass = document.getElementById("newPass").value;
+
+            const userData = JSON.parse(localStorage.getItem("user"));
+
+            if (userData && newUser === userData.nome && newPass === userData.senha) {
+                window.location.href = "/tela-home/home.html";
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+
+            return false;
+}
+    </script>
+</body>
+</html>

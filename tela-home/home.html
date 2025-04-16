@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Página God of War Games</title>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="site-name">God Of War</h1>
+    <a href="index.html" class="logout-button">Logout</a>
+  </header>
+
+  <section class="publicar">
+    <input type="text" placeholder="Criador" class="post-title">
+    <input type="text" placeholder="Título da postagem" class="post-title">
+    <textarea placeholder="Descrição da postagem" class="post-text"></textarea>
+    <input type="file" class="post-media">
+    <button class="publish-button">Publicar</button>
+  </section>
+
+  <div class="posts-container">
+    <div class="post">
+      <p class="user-name">Fernando</p>
+      <p class="user-titulo">God Of War 2</p>
+      <img src="/midia/god-of.jpg" alt="Exemplo de imagem" class="post-media-display">
+      <p class="post-content">Um dos melhores jogos do ps2 já inventado, estou facinado!!!</p>
+      <div class="post-actions">
+        <button class="like-button">Curtir</button>
+        <button class="share-button">Compartilhar</button>
+      </div>
+    </div>
+
+    <div class="post">
+      <p class="user-name">Amanda</p>
+      <p class="user-titulo">God Of War 3</p>
+      <img src="/midia/good of.webp" alt="Exemplo de imagem" class="post-media-display">
+      <p class="post-content">Que jogooo, um dos melhores da coletania, se não o melhor de todos.</p>
+      <div class="post-actions">
+        <button class="like-button">Curtir</button>
+        <button class="share-button">Compartilhar</button>
+      </div>
+    </div>
+
+    <div class="post">
+      <p class="user-name">Felipe</p>
+      <p class="user-titulo">God Of War Ascension</p>
+      <img src="/midia/hq720.avif" alt="Exemplo de imagem" class="post-media-display">
+      <p class="post-content">Meu deussssss, que final de jogooooo, muito dificil, mais espetacular</p>
+      <div class="post-actions">
+        <button class="like-button">Curtir</button>
+        <button class="share-button">Compartilhar</button>
+      </div>
+    </div>
+
+    <script>
+      const publishBtn = document.querySelector('.publish-button');
+    
+      publishBtn.addEventListener('click', () => {
+        const criador = document.querySelectorAll('.post-title')[0].value.trim();
+        const titulo = document.querySelectorAll('.post-title')[1].value.trim();
+        const descricao = document.querySelector('.post-text').value.trim();
+        const imagemInput = document.querySelector('.post-media');
+        const imagem = imagemInput.files[0];
+    
+        if (!criador || !titulo || !descricao || !imagem) {
+          alert("Preencha todos os campos corretamente.");
+          return;
+        }
+    
+        const reader = new FileReader();
+    
+        reader.onload = e => {
+          const novoPost = document.createElement('div');
+          novoPost.classList.add('post');
+          novoPost.innerHTML = `
+            <p class="user-name">${criador}</p>
+            <p class="user-titulo">${titulo}</p>
+            <img src="${e.target.result}" class="post-media-display" />
+            <p class="post-content">${descricao}</p>
+            <div class="post-actions">
+              <button class="like-button">Curtir</button>
+              <button class="share-button">Compartilhar</button>
+            </div>
+          `;
+          document.querySelector('.posts-container').prepend(novoPost);
+          butoes(novoPost);
+        };
+    
+        reader.readAsDataURL(imagem);
+    
+        document.querySelectorAll('.post-title')[0].value = '';
+        document.querySelectorAll('.post-title')[1].value = '';
+        document.querySelector('.post-text').value = '';
+        imagemInput.value = '';
+      });
+    
+      function butoes(container) {
+        const likeBtn = container.querySelector('.like-button');
+        const shareBtn = container.querySelector('.share-button');
+    
+        likeBtn.addEventListener('click', () => {
+          likeBtn.textContent = 'Curtido!';
+          likeBtn.disabled = true;
+        });
+    
+        shareBtn.addEventListener('click', () => {
+          alert('Link copiado para a área de transferência!');
+        });
+      }
+    
+      document.querySelectorAll('.post').forEach(post => initPostButtons(post));
+    </script>
+
+  </div>
+</body>
+</html>
