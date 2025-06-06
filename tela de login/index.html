@@ -21,22 +21,6 @@
             <p>Não possui uma conta? <a href="/tela de cadastro/cadastro.html">Fazer cadastro</a></p>
         </div>
     </form>
-
-    <script>
-        function login() {
-            const newUser = document.getElementById("newUser").value;
-            const newPass = document.getElementById("newPass").value;
-
-            const userData = JSON.parse(localStorage.getItem("user"));
-
-            if (userData && newUser === userData.nome && newPass === userData.senha) {
-                window.location.href = "/tela-home/home.html";
-            } else {
-                alert("Usuário ou senha incorretos!");
-            }
-
-            return false;
-}
-    </script>
 </body>
+    <script src="../script.JS/login.JS"></script>
 </html>

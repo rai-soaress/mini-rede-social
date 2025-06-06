@@ -27,19 +27,6 @@ section {
     margin: 20px auto; 
   }
 
-
-  input.post-title,
-  textarea.post-text,
-  input.post-media {
-      border-radius: 15px;
-      border: none;
-      padding: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      outline: none;
-      font-size: 14px;
-  }
-
-
 .posts-container {
     display: flex;
     flex-wrap: wrap;
