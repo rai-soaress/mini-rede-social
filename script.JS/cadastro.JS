@@ -5,7 +5,7 @@ function cadastro(event) {
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("password").value;
 
-   
+    
     if (nome.length < 3) {
         alert("O nome precisa ter mais de 3 caracteres!");
         document.getElementById("nome").focus();
@@ -20,10 +20,12 @@ function cadastro(event) {
         return false;
     }
 
-    
+
     const usuario = { nome, email, senha };
     localStorage.setItem("user", JSON.stringify(usuario));
     alert("Cadastro realizado com sucesso!");
-    window.location.replace("/tela-de-login/index.html");
+    
+
+    window.location.href = "../tela-de-login/index.html"
     return true;
 }
